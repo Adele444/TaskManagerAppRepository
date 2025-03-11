@@ -1,0 +1,28 @@
+.wrapper {
+    width: 420px;
+    background: #8b9d83;
+    color: #fff;
+    border-radius: 10px;
+    padding: 30px 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+}
+
+.wrapper h1 {
+    font-size: 50px;
+    text-align: center;
+    padding: 30px 40px;
+}
+.wrapper button {
+    width: 100%;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 40px;
+    height: 45px;
+    
+    border: none;
+    outline: none;
+    background: #fff;
+    color: #333;
+
+}
+

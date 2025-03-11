@@ -9,7 +9,7 @@ function App() {
   const [user, setUser] = useState(null);
 
   return (
-    <div className="min-h-screen flex justify-center items-center bg-gray-200">
+    <div className="min-h-screen flex justify-center items-center ">
       {user ? <TaskManager user={user} setUser={setUser} /> : <Login setUser={setUser} />}
     </div>
   );

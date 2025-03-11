@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { auth, signOut } from "./firebase";
+import './TaskManager.css';
 
 /**
  * TaskManager Component - Displays tasks and allows users to add/remove tasks.
@@ -21,28 +22,23 @@ function TaskManager({ user, setUser }) {
   };
 
   return (
-    <div className="max-w-lg mx-auto mt-10 p-6 bg-white shadow-lg rounded-lg">
-      <h2 className="text-2xl font-bold mb-4 text-center text-gray-700">Welcome, {user.displayName}</h2>
+    //max-w-lg mx-auto mt-10 p-6 bg-white shadow-lg rounded-lg"
+    <div className="container">
+      <h3 className="welcome">Welcome, {user.displayName}</h3>
       
-      {/* Logout Button */}
-      <div className="flex justify-center mb-4">
-        <button
-          className="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition"
-          onClick={() => signOut(auth).then(() => setUser(null))}
-        >
-          Logout
-        </button>
-      </div>
 
       {/* Add Task Button */}
       <div className="flex justify-center mb-4">
+      <h3 className="tasklisttitle">Task List &emsp; &emsp; &emsp;</h3>
         <button
-          className="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition"
+          className="addTask"
           onClick={addTask}
         >
           Add Task
         </button>
       </div>
+
+      
 
       {/* Task List */}
       <ul>
@@ -56,7 +52,7 @@ function TaskManager({ user, setUser }) {
             >
               {task}
               <button
-                className="bg-red-400 text-white px-3 py-1 rounded-lg hover:bg-red-500 transition"
+                className="text-white px-3 py-1 rounded-lg hover:bg-red-500 transition"
                 onClick={() => deleteTask(index)}
               >
                 ✖
@@ -65,6 +61,19 @@ function TaskManager({ user, setUser }) {
           ))
         )}
       </ul>
+
+      {/* Logout Button code text-white px-4 py-2 rounded-lg hover:bg-red-600 transition*/} 
+      <div className="flex justify-center mb-4">
+        <button
+          className="logout"
+          onClick={() => signOut(auth).then(() => setUser(null))}
+        >
+          Logout
+        </button>
+      </div>
+
+
+
     </div>
   );
 }
